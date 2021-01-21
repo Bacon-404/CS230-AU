@@ -1,8 +1,0 @@
-public class InvalidDenominatorException extends Exception {
-  public InvalidDenominatorException() {
-    super();
-  }
-  public InvalidDenominatorException(String message) {
-    super(message);
-  }
-}
