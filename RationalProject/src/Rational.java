@@ -40,9 +40,9 @@ public class Rational {
 		}
 	}
 	
-	public Rational(Rational num, Rational den) {
-		numerator = getNumerator(num);
-		denominator = getDenominator(den);
+	public Rational(Rational rational) {
+		this.numerator = rational.numerator;
+		this.denominator = rational.denominator;
 	}
 	
 	public int getNumerator() {
@@ -54,7 +54,7 @@ public class Rational {
 	}
 	
 	public double getDecimal() {
-		
+		return this.numerator / this.denominator;
 	}
 	
 	public boolean equals(Rational rational) {
@@ -65,7 +65,8 @@ public class Rational {
 		
 	}
 	
+	@Override
 	public String toString() {
-		
+		return " " + numerator + "/" + denominator + " ";
 	}
 }
