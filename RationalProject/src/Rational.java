@@ -1,11 +1,9 @@
-/**
- * 
- */
+
 /**
  * @author Christian Fagan
  *
  */
-
+// Todo: Comments, Demo program
 
 public class Rational {
 	
