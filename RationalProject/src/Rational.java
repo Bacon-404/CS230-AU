@@ -58,11 +58,22 @@ public class Rational {
 	}
 	
 	public boolean equals(Rational rational) {
+		boolean result;
+		
+		if (this.equals(rational)) {
+			result = true;
+		}
+		else {
+			result = false;
+		}
+		return result;
 		
 	}
 	
 	public Rational copy() {
-		
+		Rational copyObj;
+		copyObj.numerator = this.numerator;
+		copyObj.denominator = this.denominator;
 	}
 	
 	@Override
