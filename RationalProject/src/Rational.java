@@ -6,7 +6,6 @@
  *
  */
 
-import InvalidDenominatorException;
 
 public class Rational {
 	
@@ -16,11 +15,12 @@ public class Rational {
 	/** 
 	 * 
 	 * @param a The value that the numerator will be set to.
+	 * @throws InvalidDenominatorException 
 	 */
-	public Rational(int num, int den) {
+	public Rational(int num, int den) throws InvalidDenominatorException {
 		numerator = num;
 		if (den <= -1) {
-			throw InvalidDenominatorException;
+			throw new InvalidDenominatorException();
 		}
 		else if (den > -1) {
 			denominator = den;
@@ -28,7 +28,7 @@ public class Rational {
 
 	}
 	
-	public Rational(String num, String den) throw InvalidDenominatorException; {
+	public Rational(String num, String den) throws InvalidDenominatorException  {
 		numerator = Integer.parseInt(num);
 		
 		if (Integer.parseInt(den) > 0) {
@@ -36,6 +36,7 @@ public class Rational {
 		}
 		
 		else {
+			throw new InvalidDenominatorException();
 		}
 	}
 	
@@ -70,7 +71,7 @@ public class Rational {
 	}
 	
 	public Rational copy() {
-		Rational copyObj;
+		Rational copyObj = null;
 		copyObj.numerator = this.numerator;
 		copyObj.denominator = this.denominator;
 		
