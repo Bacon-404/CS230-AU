@@ -28,7 +28,7 @@ public class Rational {
 
 	}
 	
-	public Rational(String num, String den) {
+	public Rational(String num, String den) throw InvalidDenominatorException; {
 		numerator = Integer.parseInt(num);
 		
 		if (Integer.parseInt(den) > 0) {
@@ -36,7 +36,6 @@ public class Rational {
 		}
 		
 		else {
-			throw InvalidDenominatorException;
 		}
 	}
 	
@@ -74,6 +73,8 @@ public class Rational {
 		Rational copyObj;
 		copyObj.numerator = this.numerator;
 		copyObj.denominator = this.denominator;
+		
+		return copyObj;
 	}
 	
 	@Override
