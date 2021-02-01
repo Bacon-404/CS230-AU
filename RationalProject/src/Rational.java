@@ -7,8 +7,8 @@
 
 public class Rational {
 	
-	int numerator = 0;
-	int denominator = 0;
+	private int numerator = 0;
+	private int denominator = 0;
 	
 	/** 
 	 * 
