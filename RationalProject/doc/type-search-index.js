@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes","u":"allclasses-index.html"},{"p":"<Unnamed>","l":"InvalidDenominatorException"},{"p":"<Unnamed>","l":"Rational"},{"p":"<Unnamed>","l":"RationalDemo"}];updateSearchResults();
