@@ -28,7 +28,7 @@ public class LinkedListClassExample {
 		//output
 		LLNode<String> currentNode = list;
 		
-		while(currentNode != null); {
+		while(currentNode != null) {
 			System.out.print(currentNode.getInfo());
 			currentNode = currentNode.getLink();
 		}
