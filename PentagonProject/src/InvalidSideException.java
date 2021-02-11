@@ -1,12 +1,25 @@
+/**
+ * 
+ * @author CJ Fagan
+ *
+ */
+
 public class InvalidSideException extends Exception {
+	
+	/**
+	 * Explicit Exception method
+	 */
 	
 	public InvalidSideException() {
 		super();
 	}
 	
-	
-	public InvalidSideException(int s) {
-		super("Error: Side value:" + s + "not valid,"
-				+ " must be greater than -1.");
+	/**
+	 * 
+	 * @param message Returns the message that is passed
+	 *  to the class from where the exception is thrown.
+	 */
+	public InvalidSideException(String message) {
+		super(message);
 	}
 }

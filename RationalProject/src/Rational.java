@@ -121,7 +121,7 @@ public class Rational {
 	}
 	
 	/**
-	 *  ToString method that overrides super tostring method
+	 *  ToString method that overrides super toString method
 	 */
 	
 	@Override
