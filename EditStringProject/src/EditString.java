@@ -17,15 +17,16 @@ public class EditString {
 		mainStack.push(mainString);
 		System.out.println();
 		String orderString = inputKeyboard.nextLine();
+		
 		while (!(orderString.equals("X")))	 {
 			
 			if (orderString.equals("U")) {
-				mainString = mainStack.peek().toUpperCase();
+				mainString = mainString.toUpperCase();
 				mainStack.push(mainString);
 			}
 			
 			if (orderString.equals("L")) {
-				mainString = mainStack.peek().toLowerCase();
+				mainString = mainString.toLowerCase();
 				mainStack.push(mainString);
 			}
 			
@@ -33,8 +34,17 @@ public class EditString {
 				System.out.print("Please input where you "
 						+ "would like to change a character");
 				int pos = inputKeyboard.nextInt();
+				System.out.print("Please input what you would"
+						+ " like to change to.");
 				String replace = inputKeyboard.nextLine();
 				
+				if (replace.length() == 1) { 
+					mainString.substring(pos, replace.charAt(0));
+				}
+				else {
+					System.out.print("Please input only one character.");
+					replace = inputKeyboard.nextLine();
+				}
 			}
 			
 			if (orderString.equals("C")) {
@@ -49,7 +59,7 @@ public class EditString {
 			}
 			
 			if (orderString.equals("R")) {
-				
+				String 
 			}
 			
 			else if (orderString.equals("Z")) {
