@@ -4,25 +4,25 @@ import java.util.Scanner;
 public class RecursiveEvens {
 	
 	public static void main(String [] args) {
-		LLNode<String> numList = new LLNode<String>(null);
+		LLNode<Integer> numList = new LLNode<Integer>(null);
 		
-		LLNode<String> newNode = new LLNode<String>(null);
+		LLNode<Integer> newNode = new LLNode<Integer>(null);
 		
 		numList.setLink(newNode);
 		instruc();
 		Scanner inputKey = new Scanner(System.in);
 		
-		while(inputKey.hasNextInt()) {
-			newNode.setLink(new LLNode<String>(inputKey.nextLine()));
+		while(inputKey.nextLine() == "0") {
+			newNode.setLink(new LLNode<Integer>(inputKey.nextInt()));
 			newNode = newNode.getLink();
-			if (inputKey.nextLine() == "0") {
-				inputKey.close();
-				break;
-			}
 		}
 		
+		inputKey.close();
 		
+		numEvens();
 	}
+		
+		
 	
 	public static void numEvens() {
 		num % 2 == 0
