@@ -16,6 +16,7 @@ public class RecursiveEvens {
 			newNode.setLink(new LLNode<String>(inputKey.nextLine()));
 			newNode = newNode.getLink();
 			if (inputKey.nextLine() == "0") {
+				inputKey.close();
 				break;
 			}
 		}
@@ -24,7 +25,7 @@ public class RecursiveEvens {
 	}
 	
 	public static void numEvens() {
-		
+		num % 2 == 0
 	}
 	
 	
