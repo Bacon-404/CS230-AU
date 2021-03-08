@@ -86,12 +86,24 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 		
 	}
 	
-	public void remove(int count) {
-		
+	public void remove(int count) throws QueueUnderflowException {
+		if (count > numElements) {
+			throw new QueueUnderflowException();
+		}
+		else {
+			//Remove elements from the front here
+		}
 	}
 	
 	public boolean swapStart() {
-		return false;
+		int front1 = front;
+		int front2 = front - 1;
+		
+		if (numElements > 2) {
+			return false;
+		}
+		else {
+		}
 	}
 	
 	public boolean swapEnds() {
