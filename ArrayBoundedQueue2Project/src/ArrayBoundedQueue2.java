@@ -95,14 +95,13 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 		}
 	}
 	
-	public boolean swapStart() {
-		int front1 = front;
-		int front2 = front - 1;
-		
+	public boolean swapStart() {		
 		if (numElements > 2) {
 			return false;
 		}
 		else {
+			T toReturn = elements[front];
+			
 		}
 	}
 	
