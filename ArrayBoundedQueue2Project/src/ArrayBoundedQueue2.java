@@ -75,14 +75,14 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	//Actual assignment code
 	
 	public String toString() {
-		String s = new String("Im an idiot");
-		return s;
-		//Like down below remove when done.
+		
+		ArrayBoundedQueue2 <T> current = 
+		
 		
 	}
 	
 	public int space() {
-		return rear - numElements;
+		return elements.length - numElements;
 		
 	}
 	
@@ -91,7 +91,9 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 			throw new QueueUnderflowException();
 		}
 		else {
-			//Remove elements from the front here
+			 elements[front] = null;
+		     front = (front + 1) % elements.length;
+		     numElements = numElements - 1;
 		}
 	}
 	
@@ -100,13 +102,18 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 			return false;
 		}
 		else {
-			T toReturn = elements[front];
 			
+			return true;
 		}
 	}
 	
 	public boolean swapEnds() {
-		return false;
+		if (numElements > 2) {
+			return false;
+		}
+		else {
+			return true;
+		}
 	}
 	
 }
