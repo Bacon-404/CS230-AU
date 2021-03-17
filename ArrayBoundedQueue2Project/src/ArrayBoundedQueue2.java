@@ -104,7 +104,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	public String toString() {
 		String str = new String();
 		String strHold = new String();
-		for (int i = numElements; i <= 0; i--) {
+		for (int i = numElements; i <= -1; i--) {
 			strHold = " " + elements[i];
 			str.concat(strHold);
 			strHold = null;
