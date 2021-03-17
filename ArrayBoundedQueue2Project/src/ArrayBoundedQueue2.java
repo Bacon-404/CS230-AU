@@ -25,7 +25,8 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
   }
   /**
    * 
-   * @param maxSize
+   * @param maxSize Argument provided in object 
+   * creation for max size of the queue.
    */
   public ArrayBoundedQueue2(int maxSize) 
   {
@@ -33,7 +34,8 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
     rear = maxSize - 1;
   }
   /**
-   * 
+   * Enqueue method provided by the interface. 
+   * Adds elements to the queue
    */
   public void enqueue(T element)
   // Throws QueueOverflowException if this queue is full;
@@ -49,7 +51,8 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
     }
   }
   /**
-   * 
+   * Dequeue method provided by the interface. 
+   * Removes elements from the queue.
    */
   public T dequeue()
   // Throws QueueUnderflowException if this queue is empty;
@@ -67,7 +70,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
     }
   }
   /**
-   * 
+   * Boolean method for determining if queue is empty.
    */
   public boolean isEmpty()
   // Returns true if this queue is empty; otherwise, returns false.
@@ -75,7 +78,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
     return (numElements == 0);
   }
   /**
-   * 
+   * Boolean method for determining if queue is empty.
    */
   public boolean isFull()
   // Returns true if this queue is full; otherwise, returns false.
@@ -83,7 +86,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
     return (numElements == elements.length);
   }
   /**
-   * 
+   * Returns the number of elements in this queue.
    */
   public int size()
   // Returns the number of elements in this queue.
@@ -95,7 +98,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	//Actual assignment code
   
   	/**
-  	 * @return 
+  	 * @return Outputs the whole of the queue as a concatenated string.
   	 */
 	@Override
 	public String toString() {
@@ -111,7 +114,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	}
 	/**
 	 * 
-	 * @return
+	 * @return Returns the space left in the queue.
 	 */
 	public int space() {
 		return elements.length - numElements;
@@ -119,8 +122,9 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	}
 	/**
 	 * 
-	 * @param count
-	 * @throws QueueUnderflowException
+	 * @param count Argument given for number of elements to remove.
+	 * @throws QueueUnderflowException Thrown if the count argument 
+	 * is larger than the amount of elements in the queue.
 	 */
 	public void remove(int count) throws QueueUnderflowException {
 		if (count > numElements) {
@@ -133,7 +137,8 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	}
 	/**
 	 * 
-	 * @return
+	 * @return Swaps the first two elements in the queue.
+	 * Uses temporary variables to swap the indexes to the objects.
 	 */
 	public boolean swapStart() {		
 		if (numElements > 2) {
@@ -151,7 +156,8 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	}
 	/**
 	 * 
-	 * @return
+	 * @return Swaps the rearmost elements in the queue. 
+	 * Uses temporary variables to swap the indexes to the objects.
 	 */
 	public boolean swapEnds() {
 		if (numElements > 2) {
