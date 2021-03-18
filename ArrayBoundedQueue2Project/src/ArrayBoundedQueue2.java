@@ -134,13 +134,11 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 		if (count > numElements) {
 			throw new QueueUnderflowException("Too few elements left in queue");
 		}
-		else {
-			for (int i = count; i < 0; i--) {
+		
+			for (int i = 0; i == count; i++)
 		      elements[front] = null;
 		      front = (front + 1) % elements.length;
 			  numElements = numElements - 1;
-			}
-		}
 	}
 	/**
 	 * 
@@ -153,7 +151,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 		}
 		else {
 			int holdFront1 = front;
-			int holdFront2 = (front + 1) % elements.length;
+			int holdFront2 = front + 1;
 			
 			T swapFrontHold = elements[holdFront1];
 			elements[holdFront1] = elements[holdFront2];
@@ -173,7 +171,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 		else {
 			
 			int holdRear1 = rear;
-			int holdRear2 = (rear - 1) % elements.length;
+			int holdRear2 = (rear - 1);
 			
 			T swapEndHold = elements[holdRear1];
 			elements[holdRear1] = elements[holdRear2];
