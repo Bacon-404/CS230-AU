@@ -102,15 +102,19 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
   	 */
 	@Override
 	public String toString() {
-		String str = new String();
-		String strHold = new String();
-		for (int i = numElements; i <= -1; i--) {
-			strHold = " " + elements[i];
-			str.concat(strHold);
-			strHold = null;
-		}
-		return str;
 		
+		
+		if (numElements == 0) {
+			throw new QueueUnderflowException("Too few elements.");
+		}
+		else {
+			String repQueue = "";
+			
+			for (int i = 0; i <= rear; i++) 
+				repQueue = " " + repQueue + elements[i].toString() + " ";
+			
+			return repQueue;
+		}
 	}
 	/**
 	 * 
@@ -128,11 +132,14 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	 */
 	public void remove(int count) throws QueueUnderflowException {
 		if (count > numElements) {
-			throw new QueueUnderflowException();
+			throw new QueueUnderflowException("Too few elements left in queue");
 		}
 		else {
-			front = (front + count) % elements.length;
-			numElements = numElements - count;
+			for (int i = count; i < 0; i--) {
+		      elements[front] = null;
+		      front = (front + 1) % elements.length;
+			  numElements = numElements - 1;
+			}
 		}
 	}
 	/**
@@ -141,7 +148,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	 * Uses temporary variables to swap the indexes to the objects.
 	 */
 	public boolean swapStart() {		
-		if (numElements > 2) {
+		if (numElements < 2) {
 			return false;
 		}
 		else {
@@ -160,7 +167,7 @@ public class ArrayBoundedQueue2<T> implements QueueInterface<T>
 	 * Uses temporary variables to swap the indexes to the objects.
 	 */
 	public boolean swapEnds() {
-		if (numElements > 2) {
+		if (numElements < 2) {
 			return false;
 		}
 		else {
