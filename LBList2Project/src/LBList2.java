@@ -302,19 +302,71 @@ public class LBList2<T> implements ListInterface<T>
     // Acutal Assignment Code
     
     public String toString() {
-			String repQueue = "";
-			return repQueue;
+			String repList = "";
+			
+			LLNode<T> current = front;
+			while(current != null) {
+				repList = current.getInfo() + "";
+				current = current.getLink();
+			}
+			
+			return repList;
     }
     
     public void removeAll(T target) {
-    	
-    }
+    	location = front;
+        found = false;
+        targetIndex = -1;
+
+        while (location != null) 
+        {
+          targetIndex++;
+          if (location.getInfo().equals(target))  // if they match
+          {
+           found = true;
+           if (found)
+           {
+             if (front == location)     
+               front = front.getLink();    // remove first node
+             else
+               previous.setLink(location.getLink());  // remove node at location
+
+             if (front == null) rear = null;   // removed only element
+
+             numElements--;
+           	}
+          }
+         
+          else 
+          {
+            previous = location;
+            location = location.getLink();
+          }
+        }
+        }
     
     public boolean swapEnds() {
+    		if (numElements < 2) {
+    			return false;
+    		}
+    		else {
+    		LLNode<T> holdFront = front;
+    		LLNode<T> holdRear = rear;
     		
-    			
-    			
-
+    		LLNode<T> holdTmp = null;
+    		
+    		holdTmp = holdFront; //Puts front into tmp storage
+    		holdFront = holdRear; // front now holds rear element
+    		holdRear = holdTmp; // rear now holds front element
+    		
+    		front = holdFront; //Changing the front element
+    		rear = holdRear; //Changing the rear element
+    		
+    		holdTmp = null; // Changing the tmp storage to null
+    		
+    		return true;
+    		}
+    		
     		
     		}
     }
