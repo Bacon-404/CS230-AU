@@ -1,7 +1,6 @@
 
 import java.util.Iterator;
 
-import ch04.queues.QueueUnderflowException;
 import ch06.lists.ListInterface;
 import support.LLNode;
 
@@ -303,10 +302,13 @@ public class LBList2<T> implements ListInterface<T>
     
     public String toString() {
 			String repList = "";
-			
+			if (numElements == 0) {
+				repList = "List is empty";
+			}
+				
 			LLNode<T> current = front;
 			while(current != null) {
-				repList = current.getInfo() + "";
+				repList = repList + current.getInfo() + " ";
 				current = current.getLink();
 			}
 			
