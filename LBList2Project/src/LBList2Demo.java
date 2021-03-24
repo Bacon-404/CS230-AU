@@ -33,6 +33,6 @@ public class LBList2Demo {
 		System.out.println(listMulti.toString());
 		System.out.println(listMulti.size());
 		listMulti.removeAll(1);
-		
+		System.out.println(listMulti.toString());
 	}
 }

@@ -316,35 +316,7 @@ public class LBList2<T> implements ListInterface<T>
     }
     
     public void removeAll(T target) {
-    	location = front;
-        found = false;
-        targetIndex = -1;
-
-        while (location != null) 
-        {
-          targetIndex++;
-          if (location.getInfo().equals(target))  // if they match
-          {
-           found = true;
-           if (found)
-           {
-             if (front == location)     
-               front = front.getLink();    // remove first node
-             else
-               previous.setLink(location.getLink());  // remove node at location
-
-             if (front == null) rear = null;   // removed only element
-
-             numElements--;
-           	}
-          }
-         
-          else 
-          {
-            previous = location;
-            location = location.getLink();
-          }
-        }
+    	
         }
     
     public boolean swapEnds() {
