@@ -340,7 +340,5 @@ public class LBList2<T> implements ListInterface<T>
     		
     		return true;
     		}
-    		
-    		
-    		}
+    	}
     }
