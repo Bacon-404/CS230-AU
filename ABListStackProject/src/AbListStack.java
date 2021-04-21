@@ -6,39 +6,40 @@ import ch06.lists.ABList;
 
 public class AbListStack<T> extends ABList implements StackInterface {
 
+	
+	protected ABList<T> elements;
+	
 	@Override
 	public void push(Object element) throws StackOverflowException {
-		// TODO Auto-generated method stub
+		elements.add(element);
 		
 	}
 
 	@Override
 	public void pop() throws StackUnderflowException {
-		// TODO Auto-generated method stub
+		//This should remove the element at the top of the stack.
+		elements.remove(numElements);
 		
 	}
 
 	@Override
 	public Object top() throws StackUnderflowException {
-		// TODO Auto-generated method stub
-		return null;
+		return elements.get(numElements);
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return (elements.size() == 0);
 	}
 
 	@Override
 	public boolean isFull() {
-		// TODO Auto-generated method stub
+		//Stack is unbounded
 		return false;
 	}
 	
-	
+	//No arg constructor
 	public AbListStack() {
-		ABList generic =  new ABList();
 	}
 	
 	@Override
