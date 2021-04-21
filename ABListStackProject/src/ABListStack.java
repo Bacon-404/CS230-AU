@@ -4,27 +4,34 @@ import ch02.stacks.StackUnderflowException;
 
 import ch06.lists.ABList;
 
-public class AbListStack<T> extends ABList implements StackInterface {
+public class ABListStack<T> implements StackInterface<T> {
 
 	
 	protected ABList<T> elements;
+	protected int numElements = -1;
 	
 	@Override
-	public void push(Object element) throws StackOverflowException {
+	public void push(T element) throws StackOverflowException {
 		elements.add(element);
-		
+		numElements++;
 	}
-
+ 
 	@Override
 	public void pop() throws StackUnderflowException {
 		//This should remove the element at the top of the stack.
-		elements.remove(numElements);
+		 elements.remove(numElements);
+		 numElements--;
 		
 	}
 
 	@Override
-	public Object top() throws StackUnderflowException {
-		return elements.get(numElements);
+	public T top() throws StackUnderflowException {
+		T topOfStack = null;
+	    if (isEmpty())
+	      throw new StackUnderflowException("Top attempted on an empty stack.");    
+	    else 
+	      topOfStack = elements.get(elements.size() - 1);
+	    return topOfStack;
 	}
 
 	@Override
@@ -39,7 +46,8 @@ public class AbListStack<T> extends ABList implements StackInterface {
 	}
 	
 	//No arg constructor
-	public AbListStack() {
+	public ABListStack() {
+		elements = new ABList<T>();
 	}
 	
 	@Override
